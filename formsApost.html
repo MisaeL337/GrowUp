@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra da Apostila Física</title>
+  <link rel="stylesheet" href="css/formsApost.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Formulário de Compra</h1>
+    <form id="apostilaForm">
+      <label for="nome">Nome Completo *</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="endereco">Endereço *</label>
+      <input type="text" id="endereco" name="endereco" required>
+
+      <label for="cep">CEP *</label>
+      <input type="text" id="cep" name="cep" required>
+
+      <label for="cidade">Cidade *</label>
+      <input type="text" id="cidade" name="cidade" required>
+
+      <label for="estado">Estado *</label>
+      <input type="text" id="estado" name="estado" required>
+
+      <label for="telefone">Telefone *</label>
+      <input type="text" id="telefone" name="telefone" required>
+
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensagem" class="mensagem"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("apostilaForm");
+    const mensagem = document.getElementById("mensagem");
+
+    // Configuração centralizada
+    const googleForm = {
+      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfY5G6YmkQd1X53tzS4jM64PsiDzCL2835JJE80wylzmt3rRw/formResponse",
+      fields: {
+        nome: "entry.620704114",
+        endereco: "entry.1403378446",
+        cep: "entry.1655058670",
+        cidade: "entry.2012275632",
+        estado: "entry.1245523923",
+        telefone: "entry.319994539",
+        email: "entry.686907484"
+      },
+      pagamentoUrl: "https://mpago.la/2kVHSm3"
+    };
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData();
+      formData.append(googleForm.fields.nome, document.getElementById("nome").value);
+      formData.append(googleForm.fields.endereco, document.getElementById("endereco").value);
+      formData.append(googleForm.fields.cep, document.getElementById("cep").value);
+      formData.append(googleForm.fields.cidade, document.getElementById("cidade").value);
+      formData.append(googleForm.fields.estado, document.getElementById("estado").value);
+      formData.append(googleForm.fields.telefone, document.getElementById("telefone").value);
+      formData.append(googleForm.fields.email, document.getElementById("email").value);
+
+      fetch(googleForm.url, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      })
+      .then(() => {
+        mensagem.innerHTML = "Obrigado! Redirecionando para o pagamento...";
+        setTimeout(() => {
+          window.location.href = googleForm.pagamentoUrl;
+        }, 1500);
+      })
+      .catch(() => {
+        mensagem.innerHTML = "Ocorreu um erro. Tente novamente.";
+      });
+    });
+  </script>
+</body>
+</html>
