@@ -9,80 +9,98 @@
 <body>
 
 <div class="form-container">
-    <h1>Formulário de Compra</h1>
-    <form id="apostilaForm">
-      <label for="nome">Nome Completo *</label>
-      <input type="text" id="nome" name="nome" required>
+  <h1>Formulário de Compra</h1>
+  <form id="apostilaForm">
+    <label for="nome">Nome Completo *</label>
+    <input type="text" id="nome" name="nome" required>
 
-      <label for="endereco">Endereço *</label>
-      <input type="text" id="endereco" name="endereco" required>
+    <label for="cep">CEP *</label>
+    <input type="text" id="cep" name="cep" required>
 
-      <label for="cep">CEP *</label>
-      <input type="text" id="cep" name="cep" required>
+    <label for="estado">Estado *</label>
+    <input type="text" id="estado" name="estado" required>
 
-      <label for="cidade">Cidade *</label>
-      <input type="text" id="cidade" name="cidade" required>
+    <label for="telefone">Telefone *</label>
+    <input type="text" id="telefone" name="telefone" required>
 
-      <label for="estado">Estado *</label>
-      <input type="text" id="estado" name="estado" required>
+    <label for="email">E-mail *</label>
+    <input type="email" id="email" name="email" required>
 
-      <label for="telefone">Telefone *</label>
-      <input type="text" id="telefone" name="telefone" required>
+    <p>Frete estimado: <span id="frete">R$ 0,00</span></p>
+    <p>Valor total: <span id="total">R$ 60,00</span></p>
 
-      <label for="email">E-mail *</label>
-      <input type="email" id="email" name="email" required>
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="mensagem" class="mensagem"></div>
+</div>
 
-      <button type="submit">Enviar</button>
-    </form>
-    <div id="mensagem" class="mensagem"></div>
-  </div>
+<script>
+const form = document.getElementById("apostilaForm");
+const mensagem = document.getElementById("mensagem");
+const valorApostila = 60.00;
 
-  <script>
-    const form = document.getElementById("apostilaForm");
-    const mensagem = document.getElementById("mensagem");
+// Frete fixo por estado
+const fretes = {
+  "AC": 25, "AL": 20, "AP": 25, "AM": 25, "BA": 20, "CE": 20, "DF": 15, "ES": 15, "GO": 15,
+  "MA": 20, "MT": 20, "MS": 20, "MG": 15, "PA": 25, "PB": 20, "PR": 15, "PE": 20, "PI": 20,
+  "RJ": 15, "RN": 20, "RS": 15, "RO": 25, "RR": 25, "SC": 15, "SP": 15, "SE": 20, "TO": 25
+};
 
-    // Configuração centralizada
-    const googleForm = {
-      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfY5G6YmkQd1X53tzS4jM64PsiDzCL2835JJE80wylzmt3rRw/formResponse",
-      fields: {
-        nome: "entry.620704114",
-        endereco: "entry.1403378446",
-        cep: "entry.1655058670",
-        cidade: "entry.2012275632",
-        estado: "entry.1245523923",
-        telefone: "entry.319994539",
-        email: "entry.686907484"
-      },
-      pagamentoUrl: "https://mpago.la/2kVHSm3"
-    };
+// Links de pagamento por valor total
+const linksPagamento = {
+  75: "https://mpago.la/1y2a1L1", // 60 + 15
+  80: "https://mpago.la/2kVHSm3", // 60 + 20
+  85: "https://mpago.la/25dRtCU"  // 60 + 25
+};
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
+// URL do Google Form (substitua pelo seu)
+const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-XEcUaBIZl4k42g11Z9gylNr8F7fcshi_gm3JJ1rEA299lg/formResponse";
 
-      const formData = new FormData();
-      formData.append(googleForm.fields.nome, document.getElementById("nome").value);
-      formData.append(googleForm.fields.endereco, document.getElementById("endereco").value);
-      formData.append(googleForm.fields.cep, document.getElementById("cep").value);
-      formData.append(googleForm.fields.cidade, document.getElementById("cidade").value);
-      formData.append(googleForm.fields.estado, document.getElementById("estado").value);
-      formData.append(googleForm.fields.telefone, document.getElementById("telefone").value);
-      formData.append(googleForm.fields.email, document.getElementById("email").value);
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  mensagem.innerHTML = "Calculando frete...";
 
-      fetch(googleForm.url, {
-        method: "POST",
-        body: formData,
-        mode: "no-cors"
-      })
-      .then(() => {
-        mensagem.innerHTML = "Obrigado! Redirecionando para o pagamento...";
-        setTimeout(() => {
-          window.location.href = googleForm.pagamentoUrl;
-        }, 1500);
-      })
-      .catch(() => {
-        mensagem.innerHTML = "Ocorreu um erro. Tente novamente.";
-      });
-    });
-  </script>
+  const nome = document.getElementById("nome").value;
+  const cep = document.getElementById("cep").value;
+  const estado = document.getElementById("estado").value.toUpperCase();
+  const telefone = document.getElementById("telefone").value;
+  const email = document.getElementById("email").value;
+
+  const frete = fretes[estado] || 15;
+  const total = valorApostila + frete;
+
+  document.getElementById("frete").innerText = "R$ " + frete.toFixed(2);
+  document.getElementById("total").innerText = "R$ " + total.toFixed(2);
+
+//  mensagem.innerHTML = "Enviando dados para planilha..."; 
+
+  const formData = new FormData();
+  formData.append("entry.2135366172", nome);     // Nome
+  formData.append("entry.849793897", cep);       // CEP
+  formData.append("entry.343481829", estado);    // Estado
+  formData.append("entry.814163698", telefone);  // Telefone
+  formData.append("entry.1336961507", email);    // Email
+  formData.append("entry.0000000000", frete);    // Opcional: frete
+  formData.append("entry.1111111111", total);    // Opcional: total
+
+  fetch(googleFormURL, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  })
+  .then(() => {
+    mensagem.innerHTML = "Redirecionando para pagamento...";
+    setTimeout(() => {
+      const link = linksPagamento[total] || "https://mpago.la/1UPTVCY";
+      window.location.href = link;
+    }, 1000);
+  })
+  .catch(err => {
+    console.error(err);
+    mensagem.innerHTML = "Erro ao enviar dados. Tente novamente.";
+  });
+});
+</script>
+
 </body>
 </html>

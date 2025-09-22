@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risen</title>
   <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/Risen Logo.png" type="image/x-icon">
+    <link rel="icon" href="img/Risen PNG.png" type="image/png">
  <style>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 </style>
-
 </head>
 <body>
   <!--cosmo vison-->
@@ -18,10 +17,10 @@
     <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Esquerdo" class="menu-icon">
     
     <nav class="menu">
-      <a href="#">HOME</a>
-      <a href="#">ABOUT US</a>
-      <a href="#">OUR SERVICE</a>
-      <a href="#">CONTACT US</a>
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#service">OUR SERVICE</a>
+      <a href="#rodape">CONTACT US</a>
     </nav>
     
     <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Direito" class="menu-icon">
@@ -35,29 +34,31 @@
       <span class="bible">BIBLE BIBLE</span>
     </h1>
 
-    <a href="#" class="get-start">
+   <!--<a href="#" class="get-start">
       GET START &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-    </a>
+    </a>--> 
 
     <p class="verse">
-      9 How can a young man keep his way pure? By guarding it according to your word. Salmos 119:9
+       How can a young man keep his way pure?  By guarding it according to your word.  Salmos 119:9
     </p>
   </div>
 
   <div class="ticker-wrapper">
-    <div class="ticker">
-      <span>ENSINO BÍBLICO - DISCIPULADO - CÉLULA - ENSINO BÍBLICO - DISCIPULADO - CÉLULA - </span>
-      <span>ENSINO BÍBLICO - DISCIPULADO - CÉLULA - ENSINO BÍBLICO - DISCIPULADO - CÉLULA - </span>
-    </div>
+  <div class="ticker">
+    <span>ENSINO BÍBLICO - DISCIPULADO - CÉLULA - ENSINO BÍBLICO - DISCIPULADO - CÉLULA - </span>
+    <span>ENSINO BÍBLICO - DISCIPULADO - CÉLULA - ENSINO BÍBLICO - DISCIPULADO - CÉLULA - </span>
   </div>
+</div>
 </section>
 
 
 
+
+
 <!-- Seção 2 - Preparing a Generation -->
 <!-- Seção 2 - Preparing a Generation -->
 
-<section class="generation-section">
+<section id="home" class="generation-section">
   <div class="generation-header">
   <div class="generation-label">
     <img src="img/ICONE - SEM FUNDO - VERDE.png" alt="Ícone" class="icon" />
@@ -102,7 +103,7 @@
 <section class="ressurection-power">
   <div class="left">
     <div class="section-header">
-      <img src="img/ICONE - SEM FUNDO - VERDE.png" alt="Ícone" class="icon">
+      <img src="img/ICONE - SEM FUNDO - preto.png" alt="Ícone" class="icon">
       <span>WHO WE ARE</span>
     </div>
 
@@ -136,13 +137,13 @@
     
     <div class="bar-group">
       <div class="label">jovens. evangélicos <span>85%</span></div>
-      <div class="bar green"><div style="width: 85%"></div></div>
+      <div class="bar green"><div data-width="85"></div></div>
 
       <div class="label">jovens. leem a Bíblia <span>11%</span></div>
-      <div class="bar lime"><div style="width: 11%"></div></div>
+      <div class="bar lime"><div data-width="11"></div></div>
 
       <div class="label">adoles.. leem a Bíblia <span>6%</span></div>
-      <div class="bar blue"><div style="width: 6%"></div></div>
+      <div class="bar blue"><div data-width="6"></div></div>
     </div>
 
     <div class="source">
@@ -156,15 +157,63 @@
   <div class="footer-bar">
     <div class="icons-left">
       <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Esquerdo 1">
-      <img src="img/Grow Up - Sem fundo V1.png" alt="">
+      <img src="img/Grow Up - Sem fundo V1 (1).png" alt="">
       <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Esquerdo 2">
+      <img src="img/Grow Up - Sem fundo V1 (1).png" alt="">
     </div>
     <div class="icons-right">
+       <img src="img/Grow Up - Sem fundo V1 (1).png" alt="">
       <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="">
-      <img src="img/Grow Up - Sem fundo V1.png" alt="Ícone Direito">
+      <img src="img/Grow Up - Sem fundo V1 (1).png" alt="Ícone Direito">
       <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="">
+     
     </div>
   </div>
+
+ <script>
+  const bar1 = document.querySelector('.bar.green div');
+  const bar2 = document.querySelector('.bar.lime div');
+  const bar3 = document.querySelector('.bar.blue div');
+
+  let animated = false;
+
+  function animateBar(bar, targetPercent) {
+    let width = 0;
+    const interval = setInterval(() => {
+      if (width >= targetPercent) {
+        clearInterval(interval);
+      } else {
+        width++;
+        bar.style.width = width + '%';
+      }
+    }, 15);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Só anima se ainda não tiver animado (evita duplicação)
+        if (!animated) {
+          animateBar(bar1, 85);
+          animateBar(bar2, 11);
+          animateBar(bar3, 6);
+          animated = true;
+        }
+      } else {
+        // Quando sair da tela, reseta e permite nova animação
+        bar1.style.width = '0%';
+        bar2.style.width = '0%';
+        bar3.style.width = '0%';
+        animated = false;
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  const section = document.querySelector('.ressurection-power');
+  observer.observe(section);
+</script>
 </section>
 
 <!-- Seção 4 - Salmos 119 -->
@@ -196,7 +245,7 @@
 <section class="vision-section">
   <div class="vision-header">
     <div class="vision-label">
-      <img src="img/ICONE - SEM FUNDO - VERDE.png" alt="Ícone" class="vision-icon" />
+      <img src="img/ICONE - SEM FUNDO - BRANCO (1).png" alt="Ícone" class="vision-icon" />
       <span>HOW TO MAKE</span>
     </div>
     <h2>FROM VISION TO REALITY</h2>
@@ -238,7 +287,7 @@
 <section class="testimonials-section">
   <div class="section-header">
     <div class="label">
-      <img src="img/ICONE- FD - PRETO.png" alt="Ícone">
+      <img src="img/ICONE - SEM FUNDO - preto.png" alt="Ícone">
       <span>TESTIMONIALS</span>
     </div>
     <h2>WHAT OUR STUDENTS SAID</h2>
@@ -331,12 +380,12 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
     </div>
 
     <!-- Itens -->
-    <div class="section-8-item">
+    <div id="service"  class="section-8-item">
       <div class="left">
         <span class="subtitle">Grow Up – Apostila de Ensino Bíblico por Princípios</span>
         <h3>ADQUIRIR APOSTILA GROW UP</h3>
       </div>
-      <a href="apostila.html" target="_blank" class="section-8-btn">DISCOVERED MORE</a>
+      <a href="apostila.html" class="section-8-btn">DISCOVERED MORE</a>
     </div>
 
     <div class="section-8-item">
@@ -366,7 +415,7 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
 </section>
 
 <!--mapa mundi-->
-<section class="contribuicao">
+<section   class="contribuicao">
   <div class="conteudo">
     <h2>COOPERADORES GROW UP</h2>
     <h1>Contribua com o ministério Grow Up</h1>
@@ -406,12 +455,14 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
 
 <!-- parte 9 -->
 
-<section class="why-bosco">
-  <div class="container">
-    <div class="text-block">
-      <img src="img/ICONE - SEM FUNDO - VERDE.png" alt="Logo" class="logo">
-     OUR WORK
-      <h2>WHY BOSCO?</h2>
+<section id="about" class="why-bosco"> 
+<div class="container"> 
+  <div class="text-block"> 
+<div class="our-work">
+  <img src="img/ICONE - SEM FUNDO - preto.png" alt="Logo" class="logo">
+  OUR WORK
+</div>
+    <h2>WHY BOSCO?</h2>
       <p class="description">
         Gabriel Bosco é um jovem de 23 anos, apaixonado por Jesus e comprometido com o ensino da Palavra de Deus.
         Professor de Ensino Bíblico e Inglês, atua também como líder de jovens e adolescentes, sendo um jovem que tenta
@@ -449,10 +500,25 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
         <h2>LET’S CREATE SOMETHING<br>EXTRAORDINARY<br>TOGETHER.</h2>
         <button class="extraordinary-btn">Risen Power</button>
       </div>
+
       <div class="extraordinary-logo-container">
         <div class="logo-circle">
           <img src="img/ICONE - SEM FUNDO - VERDE.png" alt="Logo" class="logo-img" />
-          <p class="circular-text"> COSMOVISION BIBLE </p>
+
+          <!-- SVG com arco do texto -->
+          <svg viewBox="0 0 300 300" class="circular-text" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path id="halfCirclePath"
+                    d="M150,150 
+                       m -120,0 
+                       a 120,120 0 0,1 240,0" />
+            </defs>
+            <text font-size="14" fill="#ccff00">
+              <textPath href="#halfCirclePath" startOffset="0%">
+               • COSMOVISION BIBLE • COSMOVISION BIBLE • COSMBIBLE • • COSMOVISION BIBLE • COSMOVISION BIBLE • COSMOVISION BIBLE • COSMOVISION BIBLE •
+              </textPath>
+            </text>
+          </svg>
         </div>
       </div>
     </div>
@@ -461,12 +527,13 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
 
 
 
+
 <!-- paRTE 11 -->
  <section class="grow-up-section">
 
  <!-- Ícone no canto superior esquerdo com legenda -->
   <div class="blog-icon-top-left">
-    <img src="img/ICONE- FD - PRETO.png" alt="Ícone do blog">
+    <img src="img/ICONE - SEM FUNDO - preto.png" alt="Ícone do blog">
     OUR BLOG
   </div>
 
@@ -495,7 +562,7 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
   </div>
 
   <div class="grow-up-qr">
-    <img src="img/Grow Up - Sem fundo V1.png" alt="">
+    <img src="img/Grow Up - Sem fundo V1 (1).png" alt="">
     <div class="qr-content">
       <h2>join our communities & get exclusive insights,<br>
       tips, devotional & updates to your church</h2>
@@ -505,49 +572,51 @@ pequena peroco o quanto mira visso de mundo estava o storcida apreno que existe 
     </div>
   </div>
 </section>
-<footer class="rodape-personalizado">
-  <div class="footer-container">
-    
-    <!-- Coluna logo -->
-    <div class="footer-col logo-col">
-      <p class="footer-title">GROW UP <br> MINISTRY</p>
-      <img src="img/GW_ministry.png" alt="Logo Grow Up" class="logo-icon">
+
+<!--rodape-->
+<section id="rodape">
+  <footer class="rodape-personalizado">
+    <div class="footer-wrapper">
+      <div class="footer-brand">
+        <img src="img/grow up fundo.jpg" alt="Logo Grow Up" class="logo-icon" />
+        <p class="footer-title">GROW UP</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>PÁGINAS</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>CONTATO</h4>
+          
+          <p class="email">growup@ministerio.com</p>
+        </div>
+
+        <div>
+          <h4>REDES SOCIAIS</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/gabrielboscob/" target="_blank"><img src="img/instagram.png.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@gabriel_bosco" target="_blank"><img src="img/youtube.png.png" alt="YouTube"></a>
+            <a href="#"><img src="img/whatsapp.png.png" alt="WhatsApp"></a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Coluna páginas -->
-    <div class="footer-col">
-      <h4>PÁGINAS</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
+    <div class="footer-bottom">
+      <p>&copy; Todos os direitos reservados. <a href="https://www.instagram.com/misael.mens/" target="_blank" class="autor">Mîyshâʼêl</a></p>
 
-    <!-- Coluna contato -->
-    <div class="footer-col">
-      <h4>CONTATO</h4>
-      <p class="telefone">+55 (11) 99999-9999</p>
-      <p class="email">growup@ministerio.com</p>
-    </div>
 
-    <!-- Coluna redes sociais -->
-    <div class="footer-col">
-      <h4>REDES SOCIAIS</h4>
-      <ul class="social-icons">
-        <li><a href="https://www.instagram.com/gabrielboscob/" target="_blank"><img src="img/instagram.png.png" alt="Instagram"></a></li>
-        <li><a href="https://www.youtube.com/@gabriel_bosco" target="_blank"><img src="img/youtube.png.png" alt="YouTube"></a></li>
-        <li><a href="" target="_blank"> <img src="img/whatsapp.png.png"   alt="WhatsApp"></a></li>
-      </ul>
     </div>
-    
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; Todos os direitos reservados. <a href="" target="_blank">Hushlam</a></p>
-  </div>
-</footer>
+  </footer>
+</section>
 
 </body>
 </html>
