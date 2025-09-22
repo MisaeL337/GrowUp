@@ -191,3 +191,100 @@ body {
 .footer-bottom{
   text-align: center;
 }
+/* Responsivo: celulares e tablets */
+@media (max-width: 768px) {
+  .apostila-venda {
+    padding: 60px 20px;
+  }
+
+  .topo {
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .topo img {
+    width: 28px;
+  }
+
+  .topo span {
+    font-size: 12px;
+  }
+
+  .apostila-venda .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .apostila-venda .left img {
+    max-width: 280px;
+  }
+
+  .apostila-venda h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .apostila-venda h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .apostila-venda p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-comprar {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  /* Rodapé responsivo */
+  .rodape-personalizado {
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+  }
+
+  .footer-col ul li a {
+    font-size: 12px;
+  }
+
+  .logo-icon {
+    width: 60px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .social-icons li a img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-title {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+}

@@ -90,3 +90,15 @@ button:hover {
     font-size: 15px;
   }
 }
+
+/* Responsividade extra para telas muito grandes */
+@media (min-width: 1200px) {
+  .form-container {
+    padding: 40px;
+    max-width: 600px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+}
