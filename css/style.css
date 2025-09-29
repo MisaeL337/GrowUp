@@ -1472,374 +1472,80 @@ height: 50px;
 
 
 
-
-/* Menu principal responsivo com ícones nas pontas e menu central */
+/*media responsivo*/
+/* ==============================
+   MOBILE - CELULAR (até 768px)
+============================== */
 @media (max-width: 768px) {
   /* COSMO SECTION */
-  .cosmo-header {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .cosmo-left h1 {
-    font-size: 24px;
-    max-width: 100%;
-  }
-
-  .cosmo-right {
-    max-width: 100%;
-  }
-
-  .cosmo-images {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .img-left,
-  .img-right {
-    min-width: 100%;
-  }
-
-  .purpose-img {
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-  }
-
-  .purpose-text {
-    font-size: 14px;
-    margin-left: 0;
-  }
-
-  .relax-img {
-    width: 100%;
-    height: auto;
-  }
-
-  .footer-box {
-    max-width: 100%;
-    padding: 20px;
-  }
-
-  .footer-icons img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .footer-btn {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .footer-btn a {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
+  .cosmo-header { flex-direction: column; gap: 20px; }
+  .cosmo-left h1 { font-size: 24px; max-width: 100%; }
+  .cosmo-right { max-width: 100%; }
+  .cosmo-images { flex-direction: column; gap: 40px; }
+  .img-left, .img-right { min-width: 100%; }
+  .purpose-img { width: 100%; height: auto; margin-left: 0; }
+  .purpose-text { font-size: 14px; margin-left: 0; }
+  .relax-img { width: 100%; height: auto; }
+  .footer-box { max-width: 100%; padding: 20px; }
+  .footer-icons img { width: 24px; height: 24px; }
+  .footer-btn { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .footer-btn a { font-size: 14px; padding: 8px 16px; }
 
   /* WHY BOSCO IMAGES */
-  .images {
-    flex-direction: column;
-    align-items: center;
-  }
+  .images { flex-direction: column; align-items: center; }
+  .images img { width: 100%; max-width: 300px; height: 260px; }
 
-  .images img {
-    width: 100%;
-    max-width: 300px;
-    height: 180px;
-  }
-}
+  /* Menu principal mobile */
+  .nav-bar { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 20px; }
+  .menu { width: 100%; justify-content: center; margin-top: 10px; gap: 15px; flex-wrap: wrap; display: flex; }
+  .menu-icon { width: 50px; height: 50px; }
 
-
-/* Menu principal responsivo com ícones nas pontas e menu central */
-@media (max-width: 768px) {
-  .nav-bar {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-  }
-
-  .menu {
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 15px;
-    flex-wrap: wrap;
-    display: flex;
-  }
-
-  .menu-icon {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-/* Versículo Salmos 119 aparecendo no mobile */
-@media (max-width: 768px) {
-  .content {
-    position: relative;
-  }
-
+  /* Versículo Salmos */
+  .content { position: relative; }
   .verse {
-    position: absolute;
-    bottom: 170px; /* espaço para não encostar na faixa rolante */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 11px;
-    max-width: 90%;
-    text-align: center;
-    z-index: 5;
-    color: #000;/* opcional: fundo escuro para contraste */
-    padding: 6px 10px;
-    border-radius: 8px;
-  }
-}
-
-
-
-
-/* Robô e círculo (Resurrection Power) centralizados corretamente */
-@media (max-width: 768px) {
-  .ressurection-power .center {
-    align-items: center;
+    position: absolute; bottom: 170px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; max-width: 90%; text-align: center; z-index: 5;
+    color: white; padding: 6px 10px; border-radius: 8px;
   }
 
-  .robot {
-    width: 200px;
-    position: relative;
-    top: -30px;
-    z-index: 2;
-  }
+  /* Resurrection Power */
+  .ressurection-power .center { align-items: center; }
+  .robot { width: 200px; position: relative; top: -30px; z-index: 2; }
+  .circle { width: 200px; height: 300px; top: -30px; position: absolute; z-index: 1; }
 
-  .circle {
-    width: 200px;
-    height: 300px;
-    top: -30px;
-    position: absolute;
-    z-index: 1;
-  }
-}
+  /* Testimonial Cards */
+  .testimonial-cards { grid-template-columns: 1fr; row-gap: 30px; }
+  .testimonial-card { padding: 20px; font-size: 13px; }
+  .quote { max-height: 140px; overflow-y: auto; font-size: 13px; line-height: 1.4; }
+  .testimonial-card .profile { flex-direction: column; align-items: flex-start; gap: 5px; }
+  .testimonial-card .stars { font-size: 14px; margin-bottom: 10px; }
 
-/* Comentários – cards menores e empilhados */
-@media (max-width: 768px) {
-  .testimonial-cards {
-    grid-template-columns: 1fr;
-    row-gap: 30px;
-  }
+  /* Ticker mobile */
+  .ticker-wrapper { height: 60px; }
+  .ticker { width: fit-content; animation: scrollTicker 3s linear infinite; }
+  .ticker span { font-size: 0.9rem; margin-right: 200vw; }
 
-  .testimonial-card {
-    padding: 20px;
-    font-size: 13px;
-  }
+  /* Extraordinary Section mobile */
+  .extraordinary-card { flex-direction: column; text-align: center; padding: 40px 20px; }
+  .extraordinary-logo-container { margin-top: 20px; width: 200px; height: 200px; position: relative; }
+  .logo-img { width: 80px; height: 80px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 5; }
+  .circular-text { position: absolute; width: 200px; height: 200px; top: 60%; left: 65%; transform: translate(-50%, -50%); z-index: 1; }
+  .circular-text path { d: path("M100,100 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0"); }
+  .circular-text textPath { text-anchor: middle; }
 
-  .quote {
-    max-height: 140px;
-    overflow-y: auto;
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  .testimonial-card .profile {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .testimonial-card .stars {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
+  /* Ícones pequenos no celular */
+  .icons-left img:nth-child(2), .icons-right img:nth-child(1) { display: none; }
 }
 
 /* ==============================
-   KEYFRAMES GLOBAIS
+   NOTEBOOKS MÉDIOS / ASUS ZENBOOK FOLD (1367px a 1440px)
 ============================== */
-@keyframes scrollTicker {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+@media (min-width: 1367px) and (max-width: 1440px) {
+  /* Extraordinary Section */
+  .circular-text { transform: scale(1) rotate(305deg); }
+  .logo-img { transform: scale(1); }
+
+  /* Resurrection Power */
+  .ressurection-power .center { transform: translateY(-50px); }
+  .ressurection-power .robot { transform: translateY(-40px); }
 }
-
-/* ==============================
-   TICKER - ESTILO GERAL (DESKTOP)
-============================== */
-.ticker-wrapper {
-  position: absolute;
-  bottom: -10px;
-  left: 0;  
-  width: 100%;
-  height: 70px;
-  background: #d7ff00;
-  transform: rotate(-3deg);
-  z-index: 3;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-}
-
-.ticker {
-  display: flex;
-  width: 200%; /* ocupa o dobro da tela para rolar contínuo */
-  animation: scrollTicker 5s linear infinite;
-}
-
-.ticker span {
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #000;
-  padding-right: 150px; /* espaçamento entre os spans */
-}
-
-/* ==============================
-   TICKER - MOBILE / TABLET
-============================== */
-@media (max-width: 768px) {
-  .ticker-wrapper {
-    height: 60px; /* reduz altura no mobile */
-  }
-
-  .ticker {
-    display: flex;
-    width: fit-content; /* largura exata do conteúdo */
-    animation: scrollTicker 3s linear infinite; /* mais lenta no mobile */
-  }
-
-  .ticker span {
-    font-size: 0.9rem;    /* fonte menor */
-    margin-right: 200vw;   /* força espaçamento suficiente para não sobrepor */
-    white-space: nowrap;
-    font-weight: bold;
-    color: #000;
-  }
-}
-
-
-/* Menu principal responsivo com ícones nas pontas e menu central */
-@media (max-width: 768px) {
-  /* Nav-bar mobile */
-  .cosmovision-section .nav-bar {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    padding: 15px 20px !important;
-  }
-
-  /* Ícones nas pontas (apenas se houver espaço) */
-  .cosmovision-section .menu-icon:first-child {
-    order: 1;
-  }
-
-  .cosmovision-section .menu {
-    order: 2;
-    display: flex !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    gap: 20px !important;
-    margin: 10px 0 !important;
-  }
-
-  .cosmovision-section .menu-icon:last-child {
-    order: 3;
-  }
-
-  /* Ícones menores no celular */
-  .cosmovision-section .menu-icon {
-    width: 50px !important;
-    height: 50px !important;
-  }
-
-  /* Links do menu */
-  .cosmovision-section .menu a {
-    font-size: 16px !important;
-  }
-}
-@media (max-width: 1024px) {
-  /* Tablet */
-  .extraordinary-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 30px;
-  }
-
-  .extraordinary-logo-container {
-    margin-top: 30px;
-  }
-
-  .circular-text {
-    width: 220px;
-    height: 220px;
-    transform: rotate(305deg) scale(0.8);
-    bottom: 10px;
-    right: calc(50% - 110px); /* centraliza horizontalmente */
-  }
-
-  .logo-img {
-    width: 80px;
-  }
-}
-
-/* ===============================
-   EXTRAORDINARY SECTION - DESKTOP
-=============================== */
-.circular-text {
-  position: absolute; font-family: Arial, sans-serif; bottom: 1; /* ajusta verticalmente */ right: 1; /* centraliza horizontalmente em relação ao card */ width: 300px; height: 300px; z-index: 3; transform: rotate(305deg); /* gira o arco para inverter */ transform-origin: center; pointer-events: none;
-}
-
-/* ===============================
-   MOBILE / TABLET - CÍRCULO COMPLETO
-=============================== */
-@media (max-width: 768px) {
-  .extraordinary-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .extraordinary-logo-container {
-    margin-top: 20px;
-    width: 200px;
-    height: 200px;
-    position: relative;
-  }
-
-  .logo-img {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-  }
-
-  .circular-text {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    top: 60%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
-  /* SVG para círculo completo */
-  .circular-text path {
-    d: path("M100,100 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0");
-  }
-
-  .circular-text textPath {
-   /* startOffset: 50%; */
-    text-anchor: middle;
-  }
-}
-
-

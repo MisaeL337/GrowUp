@@ -79,13 +79,18 @@ box-sizing: border-box;
 }
 
 .btn-comprar {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #c4ff00;
   color: white;
   padding: 12px 30px;
   text-decoration: none;
   border-radius: 30px;
   transition: all 0.3s ease;
+  text-align: center;
+  font-size: 16px;
+  width: fit-content;
 }
 
 .btn-comprar:hover {
@@ -221,4 +226,98 @@ box-sizing: border-box;
 .footer-bottom a:hover {
   color: #c4ff00;
   transform: scale(1.2);
+}
+
+
+
+
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .apostila-venda .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .apostila-venda .left img {
+    max-width: 100%;
+  }
+
+  .apostila-venda h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .apostila-venda h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .apostila-venda p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .btn-comprar {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .topo {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .topo img {
+    width: 30px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-links div {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apostila-venda {
+    padding: 40px 20px;
+  }
+
+  .apostila-venda h1 {
+    font-size: 20px;
+  }
+
+  .apostila-venda h2 {
+    font-size: 16px;
+  }
+
+  .apostila-venda p {
+    font-size: 14px;
+  }
+
+.btn-comprar {
+  margin: 0 auto;
+}
+
+
+
+  .logo-icon {
+    width: 50px;
+  }
+
+  .footer-title {
+    font-size: 14px;
+  }
 }
