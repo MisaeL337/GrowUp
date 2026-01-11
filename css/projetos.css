@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.projects-hero {
+  padding: 160px 20px 80px;
+  text-align: center;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0a0a0a 100%);
+  border-bottom: 1px solid #222;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge-projects {
+  background-color: rgba(30, 144, 255, 0.1);
+  border: 1px solid #1E90FF;
+  color: #1E90FF;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.projects-hero h1 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.projects-hero .highlight {
+  color: #1E90FF; /* Azul para diferenciar de ofertas mensais */
+}
+
+.projects-hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* GRID DE PROJETOS */
+.projects-section {
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background: #161616;
+  border: 1px solid #333;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: #1E90FF;
+}
+
+.project-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status-tag.em-andamento { background-color: #1E90FF; }
+.status-tag.urgente { background-color: #ff4444; }
+.status-tag.concluido { background-color: #a4ff3c; color: #000; }
+
+.project-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.project-content p {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* BARRA DE PROGRESSO */
+.progress-container {
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #333;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #1E90FF;
+  border-radius: 4px;
+}
+
+.percentage {
+  font-size: 0.8rem;
+  color: #1E90FF;
+  font-weight: bold;
+  display: block;
+  text-align: right;
+}
+
+.donate-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.donate-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.donate-btn.disabled {
+  border-color: #333;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.donate-btn.disabled:hover {
+  background: transparent;
+  color: #555;
+}
+
+.project-card.completed {
+  opacity: 0.7;
+}

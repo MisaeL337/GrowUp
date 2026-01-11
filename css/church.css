@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+  background-color: #0d0d0d; /* Preto quase absoluto */
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.church-hero {
+  padding: 160px 20px 100px;
+  text-align: center;
+  position: relative;
+  /* Gradiente Roxo/Rosa */
+  background: radial-gradient(circle at center, #2a0a3d 0%, #0d0d0d 80%);
+  border-bottom: 1px solid #333;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.badge {
+  background: linear-gradient(90deg, #bf00ff, #ff007f);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(191, 0, 255, 0.4);
+}
+
+.church-hero h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.church-hero .highlight {
+  color: #ff007f; /* Rosa Neon */
+  text-shadow: 3px 3px 0 #bf00ff; /* Sombra Roxa */
+}
+
+.church-hero p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* PILARES SECTION */
+.pillars-section {
+  padding: 80px 40px;
+  background-color: #111;
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header-center h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #bf00ff, #ff007f);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pillar-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #bf00ff, #ff007f);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(191, 0, 255, 0.15);
+}
+
+.pillar-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.pillar-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pillar-card p {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* COMMUNITY CTA */
+.community-cta {
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #1a0526 0%, #0d0d0d 100%);
+  text-align: center;
+}
+
+.cta-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #bf00ff;
+}
+
+.cta-text p {
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.cta-btn {
+  background: linear-gradient(90deg, #bf00ff, #ff007f);
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+}
+
+@media (max-width: 768px) {
+  .church-hero h1 { font-size: 1.8rem; }
+}
+
+/* Ajuste do ícone flutuante no CTA */
+.floating-logo {
+  max-width: 150px; /* Limita o tamanho para não ficar gigante */
+  width: 100%;
+  margin-top: 40px;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}

@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+  background-color: #f4f4f4;
+  color: #1a1a1a;
+  font-family: 'Urbanist', sans-serif;
+  overflow-x: hidden;
+  /* Padrão de Grid no fundo para dar ar técnico/escolar */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* HERO SECTION */
+.school-hero {
+  padding: 180px 40px 100px;
+  text-align: left; /* Alinhamento à esquerda */
+  background: radial-gradient(circle at top right, rgba(30, 144, 255, 0.1), transparent 60%);
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  border: 1px solid #1E90FF;
+  color: #1E90FF;
+  background: rgba(30, 144, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 4px; /* Bordas mais quadradas */
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.school-hero h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin: 0 0 30px 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.school-hero .highlight {
+  color: transparent;
+  -webkit-text-stroke: 2px #1E90FF; /* Texto vazado Azul para contraste no branco */
+  display: block;
+}
+
+.school-hero p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+  border-left: 4px solid #1E90FF;
+  padding-left: 20px;
+}
+
+/* METODOLOGIA */
+.methodology-section {
+  padding: 100px 40px;
+  /* Fundo sólido para separar visualmente */
+  background-color: #ffffff; 
+  border-bottom: 1px solid #ddd;
+}
+
+.section-header-center {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-header-center img {
+  width: 40px;
+  margin-bottom: 0;
+}
+
+.section-header-center h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo de Lista/Processo em vez de Cards */
+.feature-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #ffffff 0%, #f9f9f9 100%);
+  padding: 30px;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  transition: all 0.3s;
+  gap: 30px;
+}
+
+.feature-card:hover {
+  border-left: 5px solid #1E90FF;
+  background: linear-gradient(90deg, #f0f0f0 0%, #fff 100%);
+  transform: translateX(10px);
+}
+
+.highlight-card {
+  border-left: 5px solid #d7ff00; /* Destaque padrão para o card do meio */
+}
+
+.icon-box {
+  font-size: 2.5rem;
+  background: #e2e2e2;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  flex-shrink: 0;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+.feature-card p {
+  color: #474747;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* MATÉRIAS */
+.subjects-section {
+  padding: 100px 40px;
+  background-color: #191717; /* Fundo escuro para contraste */
+}
+
+.section-label {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label span {
+  color: #1E90FF;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.subjects-grid {
+  display: grid;
+  /* Grid estilo Tabela Periódica */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subject-item {
+  background: #a7a7a7;
+  border: 1px solid #ddd;
+  padding: 25px;
+  aspect-ratio: 1/1; /* Quadrado perfeito */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.subject-item:hover {
+  background: #1E90FF;
+  border-color: #1E90FF;
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(30, 144, 255, 0.3);
+}
+
+.subject-code {
+  font-size: 2rem;
+  color: #f0f0f0; /* Cinza bem claro para fundo */
+  opacity: 1;
+}
+
+.subject-item h3 {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subject-item:hover h3 {
+  color: #fff;
+}
+
+.subject-item p {
+  display: none; /* Esconde a descrição para manter o visual limpo de tabela */
+}
+
+/* CTA */
+.school-cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: radial-gradient(circle, #f4f4f4 0%, #e0e0e0 100%);
+  border-top: 1px solid #ddd;
+}
+
+.cta-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.cta-content p {
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 0; /* Botão quadrado para combinar com o tema técnico */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background-color: #1a1a1a;
+  box-shadow: 5px 5px 0 #d7ff00; /* Sombra sólida retro Neon */
+  transform: translate(-2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .school-hero h1 { font-size: 1.8rem; }
+  .feature-card { flex-direction: column; text-align: center; align-items: center; }
+}

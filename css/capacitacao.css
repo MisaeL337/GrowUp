@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+  background-color: #f5f5f5; /* Fundo base claro */
+  color: #1a1a1a; /* Texto base escuro */
+  font-family: 'Urbanist', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.leadership-hero {
+  padding: 160px 20px 100px;
+  text-align: center;
+  background: #1E90FF; /* Azul Vibrante (Igual Index) */
+  border-bottom: none;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge {
+  background-color: transparent;
+  border: 1px solid #d7ff00;
+  color: #d7ff00;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.leadership-hero h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.leadership-hero .highlight {
+  color: #d7ff00;
+  text-shadow: 2px 2px 0 #000; /* Sombra sólida para destaque no azul */
+}
+
+.leadership-hero p {
+  font-size: 1.2rem;
+  color: #e0e0e0; /* Cinza bem claro para contraste no azul */
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* VISÃO SECTION */
+.vision-section {
+  padding: 80px 40px;
+  background-color: #ffffff; /* Fundo Branco */
+}
+
+.vision-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.vision-text h2 {
+  font-size: 2rem;
+  color: #1a1a1a; /* Texto escuro */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.vision-text p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vision-stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.stat-box {
+  background: #f9f9f9; /* Fundo cinza bem claro */
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  border-color: #1E90FF; /* Borda azul no hover */
+}
+
+.stat-box h3 {
+  font-size: 1.5rem;
+  color: #1E90FF; /* Título azul */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stat-box p {
+  color: #333;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MÓDULOS */
+.modules-section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Mantivemos escuro aqui para criar contraste com a seção branca acima */
+  background-color: #111; 
+  border-radius: 20px; /* Arredondado para parecer um bloco separado */
+  margin-bottom: 60px;
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header-center img {
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.section-header-center h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.module-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border-left: 4px solid #333;
+  transition: all 0.3s;
+}
+
+.module-card:hover {
+  background: #222;
+  border-left-color: #d7ff00;
+}
+
+.module-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.module-card:hover .module-number {
+  color: #d7ff00;
+  opacity: 0.5;
+}
+
+.module-card h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.module-card p {
+  color: #aaa;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* WORKSHOPS SECTION */
+.workshops-section {
+  padding: 80px 40px;
+  background-color: #f0f0f0; /* Cinza claro */
+}
+
+.workshops-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.workshop-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border-bottom: 4px solid #ddd; /* Borda inferior sutil */
+  transition: all 0.3s;
+}
+
+.workshop-item:hover {
+  transform: translateY(-5px);
+  border-bottom-color: #ff8c00; /* Laranja no hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.workshop-tag {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #ff8c00; /* Laranja */
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.workshop-item h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.workshop-item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Badge de Treinamento */
+.training-badge {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+/* CTA */
+.leadership-cta {
+  padding: 80px 20px;
+  text-align: center;
+  background: #fff; /* Fundo Branco */
+  border-top: 1px solid #ddd;
+}
+
+.cta-content h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.cta-content p {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  background-color: #1E90FF; /* Botão Azul */
+  color: #fff;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  background-color: #111;
+  color: #d7ff00;
+}
+
+@media (max-width: 768px) {
+  .leadership-hero h1 { font-size: 1.8rem; }
+}

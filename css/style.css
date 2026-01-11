@@ -4,16 +4,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100vw;
-}
-/* SCROLL SUAVE GLOBAL */
-html {
-  scroll-behavior: smooth;
 }
 body {
   font-family: 'Press Start 2P', cursive;
   overflow-x: hidden;
- 
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 
@@ -115,32 +114,6 @@ body {
   padding-bottom: 90px; /* espaço para faixa e botão */
 }
 
-
-/*
-.get-start {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-  background: #d7ff00;
-  color: #000;
-  border: 2px solid #d7ff00;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  z-index: 10; 
-  transition: all 0.3s ease;
-  display: inline-block;  
-}
-*/
-
-.get-start:hover {
-  background:#1E90FF ;
-  color: #000;
-}
-
 .ticker-wrapper {
   position: absolute;
   bottom: -10px;
@@ -220,25 +193,6 @@ body {
   line-height: 1.4;
 }
 
-.all-services-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: 2px solid #d4ff00;
-  border-radius: 20px;
-  padding: 6px 18px;
-  font-size: 14px;
-  color: #d4ff00;
-  text-decoration: none;
- 
-}
-
-.all-services-btn:hover {
-  background-color: #d4ff00;
-  color: #000;
-   transition: all 0.3s ease;
-}
-
 .generation-cards {
   display: flex;
   flex-wrap: wrap;
@@ -293,18 +247,6 @@ body {
 .dark-card p,
 .middle-card p {
   color: #cccccc !important;
-}
-
-.image-areaa {
-  margin-top: 20px;
-  width: 100%;
-  height: 210px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 2px solid #444;
-  border-radius: 8px;
 }
 
 .image-area img {
@@ -980,7 +922,8 @@ height: 50px;
   margin-bottom: 20px;
 }
 
-.item button {
+.item button,
+.item .btn-adquirir {
   background-color: transparent;
   border: 2px solid #a4ff3c;
   color: white;
@@ -989,9 +932,12 @@ height: 50px;
   cursor: pointer;
   transition: 0.3s;
   margin: 0 auto; /* Para garantir centralização se usar display block */
+  display: inline-block; /* Garante que o link se comporte como botão */
+  text-decoration: none; /* Remove sublinhado de link para ficar igual ao button */
 }
 
-.item button:hover {
+.item button:hover,
+.item .btn-adquirir:hover {
   background-color: #a4ff3c;
   color: #000;
 }
@@ -1146,6 +1092,9 @@ height: 50px;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif; /* Restaura a fonte original */
+  text-decoration: none; /* Remove sublinhado de link */
+  display: inline-block; /* Garante comportamento de botão */
 }
 
 .extraordinary-btn:hover {
@@ -1414,10 +1363,6 @@ height: 50px;
   width: 100%;
 }
 
-.footer-links a:hover {
-  color: #c4ff00;
-}
-
 .telefone, .email {
   font-size: 13px;
   margin: 4px 0;
@@ -1447,14 +1392,6 @@ height: 50px;
 }
 
 .footer-bottom a {
-  color: #c4ff00;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration:underline;
-}
-.footer-bottom a {
   color: white;               /* cor inicial */
   text-decoration: none !important;
   font-weight: bold;
@@ -1476,6 +1413,75 @@ height: 50px;
 /* ==============================
    MOBILE - CELULAR (até 768px)
 ============================== */
+
+/* ==============================
+   TABLET (até 1024px)
+============================== */
+@media (max-width: 1024px) {
+  /* Why Bosco - Stack content */
+  .why-bosco .container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .text-block {
+    width: auto;
+    text-align: left;
+    flex: 1;
+  }
+
+  .text-block .our-work {
+    justify-content: flex-start;
+  }
+
+  .description {
+    margin: 0 0 30px 0;
+  }
+
+  .stats {
+    justify-content: flex-start;
+  }
+
+  .images {
+    flex-direction: column;
+    width: auto;
+    gap: 15px;
+  }
+
+  .images img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  /* Extraordinary Section - Sun in Corner Effect for Tablet */
+  .extraordinary-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .extraordinary-text {
+    position: relative;
+    z-index: 2;
+    max-width: 60%; /* Garante que o texto não fique em cima do logo */
+  }
+
+  .extraordinary-logo-container {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    margin: 0;
+    width: 220px;
+    height: 220px;
+  }
+
+  .logo-img {
+    bottom: 60px;
+    right: 60px;
+  }
+}
+
 @media (max-width: 768px) {
   /* COSMO SECTION */
   .cosmo-header { flex-direction: column; gap: 20px; }
