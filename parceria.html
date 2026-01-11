@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Up - Parcerias</title>
+    <!-- Reutiliza o estilo principal -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Estilo específico desta página -->
+    <link rel="stylesheet" href="css/parceria.css">
+    <link rel="icon" href="img/Risen PNG.png" type="image/png">
+</head>
+<body>
+
+  <!-- Navbar (Padrão) -->
+  <div class="nav-bar" style="background-color: #0a0a0a;">
+    <a href="index.html">
+        <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Esquerdo" class="menu-icon">
+    </a>
+    
+    <nav class="menu">
+      <a href="index.html">HOME</a>
+      <a href="index.html#about">ABOUT US</a>
+      <a href="index.html#service">OUR SERVICE</a>
+      <a href="#rodape">CONTACT US</a>
+    </nav>
+    
+    <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Direito" class="menu-icon">
+  </div>
+
+  <!-- Hero Section -->
+  <section class="partner-hero">
+    <div class="hero-content">
+      <span class="badge-partner">EXPANSÃO DO REINO</span>
+      <h1>LEVE O GROW UP PARA SUA <span class="highlight">COMUNIDADE</span></h1>
+      <p>
+        Queremos caminhar junto com sua igreja ou escola. Oferecemos metodologia, 
+        treinamento e material didático para fortalecer a nova geração.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção Formulário -->
+  <section class="form-section">
+    <div class="form-container">
+      <div class="form-header">
+        <h2>APLICAÇÃO PARA PARCERIA</h2>
+        <p>Preencha os dados abaixo para que nossa equipe de expansão entre em contato.</p>
+      </div>
+
+      <form class="partner-form">
+        <div class="form-group">
+          <label for="name">Nome do Líder/Responsável</label>
+          <input type="text" id="name" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="role">Cargo/Função</label>
+            <select id="role" required>
+              <option value="" disabled selected>Selecione...</option>
+              <option value="pastor">Pastor</option>
+              <option value="lider">Líder de Jovens</option>
+              <option value="diretor">Diretor de Escola</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="phone">WhatsApp</label>
+            <input type="tel" id="phone" placeholder="(00) 00000-0000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="institution">Nome da Igreja ou Escola</label>
+          <input type="text" id="institution" placeholder="Ex: Igreja Batista Central" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">Cidade</label>
+            <input type="text" id="city" required>
+          </div>
+          <div class="form-group">
+            <label for="state">Estado</label>
+            <input type="text" id="state" placeholder="UF" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">Qual seu principal interesse?</label>
+          <select id="interest">
+            <option value="material">Material Didático (Apostilas)</option>
+            <option value="treinamento">Treinamento de Liderança</option>
+            <option value="palestra">Convite para Palestra/Evento</option>
+            <option value="consultoria">Consultoria Completa</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensagem (Opcional)</label>
+          <textarea id="message" rows="4" placeholder="Conte um pouco sobre sua necessidade atual..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">ENVIAR APLICAÇÃO</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé (Padrão) -->
+  <section id="rodape">
+    <footer class="rodape-personalizado">
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <img src="img/grow up fundo.jpg" alt="Logo Grow Up" class="logo-icon" />
+          <p class="footer-title">GROW UP</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>PÁGINAS</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">Sobre</a></li>
+              <li><a href="ensino.html">Cursos</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>CONTATO</h4>
+            <p class="email">growup@ministerio.com</p>
+          </div>
+          <div>
+            <h4>REDES SOCIAIS</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/gabrielboscob/" target="_blank"><img src="img/instagram.png.png" alt="Instagram"></a>
+              <a href="https://www.youtube.com/@gabriel_bosco" target="_blank"><img src="img/youtube.png.png" alt="YouTube"></a>
+              <a href="#"><img src="img/whatsapp.png.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Copyright e Direitos Reservados à Risen - <a href=" https://misael337.github.io/site-profissional/" target="_blank" class="autor">Misael Dev</a></p>
+      </div>
+    </footer>
+  </section>
+
+</body>
+</html>

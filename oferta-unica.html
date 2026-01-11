@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Up - Oferta Única</title>
+    <!-- Reutiliza o estilo principal -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Estilo específico desta página -->
+    <link rel="stylesheet" href="css/oferta-unica.css">
+    <link rel="icon" href="img/Risen PNG.png" type="image/png">
+</head>
+<body>
+
+  <!-- Navbar (Padrão) -->
+  <div class="nav-bar" style="background-color: #0a0a0a;">
+    <a href="index.html">
+        <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Esquerdo" class="menu-icon">
+    </a>
+    
+    <nav class="menu">
+      <a href="index.html">HOME</a>
+      <a href="index.html#about">ABOUT US</a>
+      <a href="index.html#service">OUR SERVICE</a>
+      <a href="#rodape">CONTACT US</a>
+    </nav>
+    
+    <img src="img/ICONE - SEM FUNDO - BRANCO.png" alt="Ícone Direito" class="menu-icon">
+  </div>
+
+  <!-- Hero Section -->
+  <section class="single-offer-hero">
+    <div class="hero-content">
+      <span class="badge-neon">DOAÇÃO PONTUAL</span>
+      <h1>OFERTA <span class="highlight">ÚNICA</span></h1>
+      <p>
+        Semeie no Reino de Deus com generosidade. <br>
+        Seu apoio pontual faz toda a diferença em nossos projetos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção de Pagamento -->
+  <section class="payment-section">
+    <div class="payment-card">
+      <div class="pix-area">
+        <h2>PIX (QR CODE)</h2>
+        <div class="qr-container">
+          <!-- Placeholder do QR Code -->
+          <img src="img/grow up fundo.jpg" alt="QR Code PIX" class="qr-code">
+        </div>
+        
+        <div class="pix-key-container">
+          <p>Chave PIX (CNPJ):</p>
+          <div class="key-box">
+            <span id="pix-key">00.000.000/0001-00</span>
+            <button class="copy-btn" onclick="copyPix()">COPIAR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="bank-details">
+        <h2>DADOS BANCÁRIOS</h2>
+        <div class="bank-info">
+          <div class="info-item">
+            <span>Banco:</span>
+            <strong>Nubank (260)</strong>
+          </div>
+          <div class="info-item">
+            <span>Agência:</span>
+            <strong>0001</strong>
+          </div>
+          <div class="info-item">
+            <span>Conta:</span>
+            <strong>1234567-8</strong>
+          </div>
+          <div class="info-item">
+            <span>Razão Social:</span>
+            <strong>Grow Up Ministry Ltda</strong>
+          </div>
+          <div class="info-item">
+            <span>CNPJ:</span>
+            <strong>00.000.000/0001-00</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé (Padrão) -->
+  <section id="rodape">
+    <footer class="rodape-personalizado">
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <img src="img/grow up fundo.jpg" alt="Logo Grow Up" class="logo-icon" />
+          <p class="footer-title">GROW UP</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>PÁGINAS</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">Sobre</a></li>
+              <li><a href="ensino.html">Cursos</a></li>
+              <li><a href="#rodape">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>CONTATO</h4>
+            <p class="email">growup@ministerio.com</p>
+          </div>
+          <div>
+            <h4>REDES SOCIAIS</h4>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/gabrielboscob/" target="_blank"><img src="img/instagram.png.png" alt="Instagram"></a>
+              <a href="https://www.youtube.com/@gabriel_bosco" target="_blank"><img src="img/youtube.png.png" alt="YouTube"></a>
+              <a href="#"><img src="img/whatsapp.png.png" alt="WhatsApp"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; Copyright e Direitos Reservados à Risen - <a href=" https://misael337.github.io/site-profissional/" target="_blank" class="autor">Misael Dev</a></p>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    function copyPix() {
+      const key = document.getElementById('pix-key').innerText;
+      navigator.clipboard.writeText(key);
+      alert('Chave PIX copiada!');
+    }
+  </script>
+
+</body>
+</html>
